@@ -34,7 +34,7 @@ best <- function( state, outcome ) {
   
   #Sort the hospitals alphabetically
   if( length(h) > 1 ) {
-    #rint("More than one!")
+    h <- h[order(h)][1]
   }
   
   return(h)
