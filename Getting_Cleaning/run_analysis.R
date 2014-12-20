@@ -20,12 +20,12 @@ feat <- read.csv("UCI HAR Dataset/features.txt", header=FALSE, sep="") # feat[,2
 
 # Set column headers before merging
 colnames(test.subject) = "TestSubject"
-colnames(test.activity) = "Activity"
+colnames(test.activity) = "activityId"
 colnames(test.msr) = feat[,2] 
 
 # The same for the training data
 colnames(train.subject) = "TestSubject"
-colnames(train.activity) = "Activity"
+colnames(train.activity) = "activityId"
 colnames(train.msr) = feat[,2]
 
 # Same colnames for test- and train-sets. Get only std() and mean()
@@ -40,23 +40,13 @@ train.set <- cbind(train.subject, train.activity, train.msr[wc])
 
 merged <- rbind(test.set, train.set)
 
+# Read the activity labels
+al <- read.csv("UCI HAR Dataset/activity_labels.txt", header=FALSE, sep="")
+colnames(al) <- c("activityId", "ActivityName")
 
-
-
+# Step #3: Use descriptive names for activities
+descrSet <- merge(merged, al, by="activityId", all.x=TRUE)
 
 stop("Nok")
-# Step #1: merge the test- and training-set to one set
-
-all.sets <- rbind(test.set, train.set)
-
-
-# Create proper names for the columns - steal from features.txt - only features
-# that contain mean() or std()
-feat <- read.csv("UCI HAR Dataset/features.txt", sep="", header=FALSE)
-selected <- grep("mean\\(\\)|std\\(\\)", feat[,2])
-
-# Give both sets meaningful names
-colnames(test.set) <- c(as.character(feat$V2), "TestSubject", "Activity")
-colnames(train.set) <- c(as.character(feat$V2), "TestSubject", "Activity")
 
 
