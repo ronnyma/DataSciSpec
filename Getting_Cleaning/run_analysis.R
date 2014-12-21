@@ -44,9 +44,33 @@ merged <- rbind(test.set, train.set)
 al <- read.csv("UCI HAR Dataset/activity_labels.txt", header=FALSE, sep="")
 colnames(al) <- c("activityId", "ActivityName")
 
-# Step #3: Use descriptive names for activities
+# Step #3: Use descriptive names for activities, i.e. set feature names as column headers
 descrSet <- merge(merged, al, by="activityId", all.x=TRUE)
 
-stop("Nok")
 
+# Step 4: Give the columns meaningful names
+
+n <- colnames(descrSet)
+
+n <- sub("acc", "Acceleration", n, ignore.case=TRUE)
+n <- sub("mag", "Magnitude", n, ignore.case=TRUE)
+n <- sub("std\\(\\)", "SD", n, ignore.case=TRUE)
+n <- sub("mean\\(\\)", "MV", n, ignore.case=TRUE)
+n <- sub("^t", "Time-", n)
+n <- sub("^f", "Freq-", n)
+n <- sub("BodyBody", "Body", n) #I did not have time to make this general! :-(
+
+# Re-assign names to the set
+colnames(descrSet) <- n
+
+# Step 5: Summary of all features per subject and per activity
+columns <- colnames(descrSet)
+tidy.set <- aggregate(descrSet[,c(3:68)], by=list(descrSet$activityId,descrSet$TestSubject), mean)
+colnames(tidy.set) <- columns[1:68]
+# Merge tidy.set with activity names
+
+final.set <- merge(tidy.set, al, by="activityId", all.x=TRUE)
+
+
+write.table(final.set, "./tidydata.csv", row.names=TRUE, sep="\t")
 
