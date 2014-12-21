@@ -72,5 +72,5 @@ colnames(tidy.set) <- columns[1:68]
 final.set <- merge(tidy.set, al, by="activityId", all.x=TRUE)
 
 
-write.table(final.set, "./tidydata.csv", row.names=TRUE, sep="\t")
+write.table(final.set, "./tidydata.csv", row.names=FALSE, sep="\t")
 
