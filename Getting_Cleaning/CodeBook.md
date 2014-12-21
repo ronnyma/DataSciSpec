@@ -37,10 +37,10 @@ Only features conveying the mean value or standard deviation is included.
 This example will yield three values, i.e. the mean for subject1-WALKING, subject1-WALKING_UPSTAIRS and subject1-LYING.
 (Here, tab is used as delimiter to ease human readability)
 
-// Subject	activityId	measurements	
-// 1	1		.76		(..)
-// 1	2		.84		(..)
-// 1	3		.23		(..)
+	Subject	activityId	measurements	
+	1	1		.76		(..)
+	1	2		.84		(..)
+	1	3		.23		(..)
 
 The Code Book
 -------------
@@ -49,12 +49,12 @@ Instead of repeating the information from "features_info.txt" here, please refer
 
 After approprietily labelling the data set with descriptive names, the following abbreviations were expanded:
 
-acc 	= Acceleration
-mag 	= Magnitude
-std()	= SD
-mean()	= MV
-t	= Time (when occurring in the beginning of a feature label)
-f	= Freq (when occurring in the beginning of a feature label)
+* acc 	= Acceleration
+* mag 	= Magnitude
+* std()	= SD
+* mean()	= MV
+* t	= Time (when occurring in the beginning of a feature label)
+* f	= Freq (when occurring in the beginning of a feature label)
 
 The name of the activity is listed in the last column. In the Tidy-set, the labels are identical. For a more in-depth 
 explanation of each and every feature, refer to the raw data set.
@@ -64,7 +64,7 @@ Study Design
 ------------
 
 Firstly, the datafiles are read into R and an appropriate label [column header] is added. For the X_-files, the column
-names are from "features.txt"- This is possible because row n in this file corresponds to column n in the X_-file. 
+names are from "features.txt"- This is possible because row# n in this file corresponds to column# n in the X_-file. 
 
 Secondly, these 2 x 3 files from the test and train-set respectively are column-bound. Since we are only interested in files
 which conveys a SD or MV, we weed out everything irrelevant (grepl). The products from column-binding is merged into a combined
@@ -75,4 +75,4 @@ Thirdly, to get a descriptive column name for the activity, the activity_labels.
 Fourthly, the column names are cleaned up to be human reader friendly (see the beginning of the isection "Code Book").
 
 Finally, an independent set is derived from this set. We aggregate by subject and activity[id] and apply the function mean to
-each segment of values, which in turn yields the mean values as described scetion "Feature Selection"
+each segment of values, which in turn yields the mean values as described section "Feature Selection"
