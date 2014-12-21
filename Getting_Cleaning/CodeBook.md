@@ -19,8 +19,8 @@ These files were used
 * y_train.txt
 
 
-The above six files can be viewed upon as two sets of files. The files in each set are related to the
-other members by line number, e.g. line# n in subject_test.txt is related to line# n in X_test.txt
+The last six files above can be viewed upon as two sets of files. The files in each set are related to the
+other membersk [of the set] by line number, e.g. line# n in subject_test.txt is related to line# n in X_test.txt
 
 "subject"-files: Integers representing each test subject pareticipating in the study. Test and train-sets are disjoint.
 "y_"-files: Integers representing the activity done by the test subject.
@@ -37,10 +37,10 @@ Only features conveying the mean value or standard deviation is included.
 This example will yield three values, i.e. the mean for subject1-WALKING, subject1-WALKING_UPSTAIRS and subject1-LYING.
 (Here, tab is used as delimiter to ease human readability)
 
-Subject	activityId	measurements	
-1	1		.76		(..)
-1	2		.84		(..)
-1	3		.23		(..)
+//Subject	activityId	measurements	
+//1	1		.76		(..)
+//1	2		.84		(..)
+//1	3		.23		(..)
 
 The Code Book
 -------------
