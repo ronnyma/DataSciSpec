@@ -37,10 +37,10 @@ Only features conveying the mean value or standard deviation is included.
 This example will yield three values, i.e. the mean for subject1-WALKING, subject1-WALKING_UPSTAIRS and subject1-LYING.
 (Here, tab is used as delimiter to ease human readability)
 
-//Subject	activityId	measurements	
-//1	1		.76		(..)
-//1	2		.84		(..)
-//1	3		.23		(..)
+// Subject	activityId	measurements	
+// 1	1		.76		(..)
+// 1	2		.84		(..)
+// 1	3		.23		(..)
 
 The Code Book
 -------------
