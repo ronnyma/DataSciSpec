@@ -4,19 +4,19 @@ The data was obtained at https://d396qusza40orc.cloudfront.net/getdata%2Fproject
 
 These files were used 
 ---------------------
+####Common files
+*activity_labels.txt
+*features.txt 
 
-activity_labels.txt
-features.txt, 
+####Test set
+*subject_test.txt
+*X_test.txt
+*y_test.txt
 
-###Test set
-subject_test.txt
-X_test.txt
-y_test.txt
-
-###Training set
-subject_train.txt
-X_train.txt
-y_train.txt
+####Training set
+*subject_train.txt
+*X_train.txt
+*y_train.txt
 
 
 The above six files can be viewed upon as two sets of files. The files in each set are related to the
