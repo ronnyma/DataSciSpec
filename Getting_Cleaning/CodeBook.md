@@ -39,9 +39,9 @@ This example will yield three values, i.e. the mean for subject1-WALKING, subjec
 
 ```
 Subject	activityId	measurements	
-1		1		.76		(..)
-1		2		.84		(..)
-1		3		.23		(..)
+1		1			.76		(..)
+1		2			.84		(..)
+1		3			.23		(..)
 ```
 
 The Code Book
